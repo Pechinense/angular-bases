@@ -1,0 +1,25 @@
+<ul class="list-group">
+  <li
+  *ngFor="
+  let character of characterList;
+   let i = index;
+   let isFirst = first;
+   let isLast = last;
+   let isEven = even;
+   let isOdd = odd;
+   "
+
+  class="list-group-item"
+  [ngClass]="{'list-group-item-success':isLast,
+  'list-group-item-primary':isEven
+    }">
+    <span class="text-primary">{{i + 1}}. </span>
+    <span>{{character.name}} - </span>
+    <strong>Power:</strong>
+    <span>{{character.power}}</span>
+    <span>Es el primero:<strong>{{isFirst}}</strong> </span>
+    <span>Es el utlimo:<strong>{{i === characterList.length - 1}}</strong> </span>
+    <span>Es par: <strong>{{isEven}} </strong></span>
+    <span>Es impar:<strong>{{isOdd}} </strong> </span>
+  </li>
+</ul>
